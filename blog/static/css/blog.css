@@ -1,0 +1,29 @@
+body {
+    background-color: #ececec;
+    margin-left: 10%;
+    width: 60%;
+}
+
+div {
+    padding: 10px;
+}
+p {
+    margin: 0;
+}
+h3 {
+    margin: 0;
+}
+
+h1 a {
+    color: #212125;
+}
+
+p.pub_date {
+    color: #839ca3;
+    font-size: small;
+    padding-top: 5px;;
+}
+
+p.post_text {
+    color: #2d6272;
+}

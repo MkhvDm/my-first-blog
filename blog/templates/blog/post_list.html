@@ -1,24 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>mikheev blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">mikheev blog</a></h1>
-        </div>
+{% extends 'blog/base.html' %}
 
-        {% for post in posts %}
-            <div>
-                <h3"><a href="">{{post.title}}</a></h3>
-                <p class='post_text'>{{post.text|linebreaksbr }}</p>
-                <p class='pub_date'>published: {{post.published_date}}</p>
+{% block content %}
+  {% for post in posts %}
+        <div class="post">
+            <h1><a class="post_title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p class="post_text">{{ post.text|linebreaksbr }}</p>
+            <div class="date">
+                <p class="pub_date">Опубликовано: {{ post.published_date }}</p>
             </div>
-        {% endfor %}
-    </body>
-</html>
+        </div>
+    {% endfor %}
+{% endblock %}

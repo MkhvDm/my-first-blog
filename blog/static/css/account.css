@@ -1,17 +1,30 @@
 /* {box-sizing: border-box;} */
 
+.account {
+    width: 70%;
+    min-width: 300px;
+}
+
+p {
+    margin-right: 100px;
+    /* display: inline-block; */
+}
+
 /* Кнопка, используемая для открытия контактной формы - фиксируется в нижней части страницы */
 .open-button {
-  background-color: #555;
+  background-color: rgb(141, 141, 141);
   color: white;
-  padding: 16px 20px;
+  padding: 6px 6px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 28px;
-  width: 280px;
+  font-size: medium;
+  display: inline-block;
+  /* position: fixed; */
+  /* bottom: 23px; */
+  /* right: 28px; */
+  /* width: 280px; */
 }
 
 /* Всплывающая форма-скрыта по умолчанию */

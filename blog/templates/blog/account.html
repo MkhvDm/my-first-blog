@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="account">
+        <h1 class="Account">
+            {% if user.is_authenticated %}
+                <p>Username: {{ user.username }}</p> 
+
+                <p>E-mail: {{user.email}}</p>
+
+                <p>First name: {{user.first_name}}</p> 
+                <button class="open-button" onclick="openForm()">change</button>
+                <div class="form-first-name" id="accountForm">
+                    <form method="POST" class="form-container">{% csrf_token %}
+                      <h3>Изменение данных</h3>
+                      <label for="fstnm"><b>New First name:</b></label>
+                      <input type="first_name" placeholder="Enter new First name" name="fstnm" required><br>
+                  
+                      <button type="submit" class="btn">Ok</button>
+                      <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                  </div>
+
+                <p>Last name: {{user.last_name}}</p>
+
+            {% else %}
+                <p>You are not authenticated!</p>
+            {% endif %}
+        </h1>    
+    </div>
+{% endblock %}

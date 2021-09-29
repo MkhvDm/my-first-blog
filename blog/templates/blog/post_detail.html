@@ -5,7 +5,8 @@
         <h1 class="post_title">
             {{ post.title }} 
             {% if user.is_authenticated %}
-                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h1> 
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a></h1> 
             {% endif %}
         </h1>
         
@@ -15,8 +16,9 @@
             <div class="date">
                 <p class="pub_date">Опубликовано: {{ post.published_date }}</p>
             </div>
-        
-    {% endif %}
+        {% else %}
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+        {% endif %}
     
     </div>
 {% endblock %}
